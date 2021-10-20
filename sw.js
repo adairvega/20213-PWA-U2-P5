@@ -23,12 +23,12 @@ self.addEventListener('install', e => {
    const promesaCache = caches.open(CACHE_STATIC_NAME)
     .then(cache => {
         return cache.addAll([
-            '20213-PWA-U2-P5/',
-            '20213-PWA-U2-P5/index.html',
-            '20213-PWA-U2-P5/css/page.css',
-            '20213-PWA-U2-P5/img/mx-tl.jpg',
-            '20213-PWA-U2-P5/js/app.js',
-            '20213-PWA-U2-P5/pages/view-offline.html'
+            '/20213-PWA-U2-P5/',
+            '/20213-PWA-U2-P5/index.html',
+            '/20213-PWA-U2-P5/css/page.css',
+            '/20213-PWA-U2-P5/img/mx-tl.jpg',
+            '/20213-PWA-U2-P5/js/app.js',
+            '/20213-PWA-U2-P5/pages/view-offline.html'
         ]
         );
     });
@@ -78,10 +78,10 @@ self.addEventListener('fetch', (event) => {
         .catch((err)=>{
             console.log('Error al solicitar el recurso');
             if (event.request.headers.get('accept').includes('text/html')) {
-                return caches.match('20213-PWA-U2-P5/pages/view-offline.html');
+                return caches.match('/20213-PWA-U2-P5/pages/view-offline.html');
             }
             if(event.request.url.includes('.jpg') || event.request.url.includes('.png') || event.request.url.includes('.jpeg')){
-                return caches.match('20213-PWA-U2-P5/img/broken.png')
+                return caches.match('/20213-PWA-U2-P5/img/broken.png')
             }
         });
     });
