@@ -1,5 +1,5 @@
 if (navigator.serviceWorker) {
-    navigator.serviceWorker.register('/sw.js')
+    navigator.serviceWorker.register('/20213-PWA-U2-P5/sw.js')
 }
 
 // if (window.caches) {
